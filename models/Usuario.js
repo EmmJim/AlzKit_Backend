@@ -24,6 +24,30 @@ const UsuariosSchema = mongoose.Schema({
         type: Date,
         default: Date.now()
     },
+    cuidador: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Usuario',
+        default: null
+    },
+    pacientes: {
+        type: Array,
+        default: []
+    },
+    localizacion: {
+        coordenadas: {
+            type: [Number],
+            required: true
+        }
+    },
+    pushToken: {
+        type: String,
+        trim: true
+    },
+    informacion: {
+        direccion: {
+            type: Object,
+        }
+    }
 });
 
 module.exports = mongoose.model('Usuario', UsuariosSchema);

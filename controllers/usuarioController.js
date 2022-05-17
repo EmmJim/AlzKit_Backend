@@ -13,7 +13,7 @@ exports.crearUsuario = async (req, res) => {
     }
 
     //Extraer email y password
-    const {email, password} = req.body;
+    const {nombre, email, password, tipoUsuario} = req.body;
 
     try {
 
